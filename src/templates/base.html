@@ -53,17 +53,32 @@
 			$( "#swatch" ).css( "background-color", "#" + hex );
 		}
 
-		$( "#red, #green, #blue" ).slider({
+		$( "#red" ).slider({
 			orientation: "horizontal",
 			range: "min",
 			max: 255,
-			value: 127,
+			value: {{red}},
 			slide: refreshSwatch,
 			change: refreshSwatch
-		});
-		$( "#red" ).slider( "value", 255 );
-		$( "#green" ).slider( "value", 140 );
-		$( "#blue" ).slider( "value", 60 );
+		})
+
+    		$( "#green" ).slider({
+    			orientation: "horizontal",
+    			range: "min",
+    			max: 255,
+    			value: {{green}},
+    			slide: refreshSwatch,
+    			change: refreshSwatch
+    		})
+
+        		$( " #blue" ).slider({
+        			orientation: "horizontal",
+        			range: "min",
+        			max: 255,
+        			value: {{blue}},
+        			slide: refreshSwatch,
+        			change: refreshSwatch
+        		})
 	} );
 	</script>
 </head>
@@ -72,7 +87,7 @@
 <p class="ui-state-default ui-corner-all ui-helper-clearfix" style="padding:4px;">
 	<span class="ui-icon ui-icon-pencil" style="float:left; margin:-2px 5px 0 0;"></span>
 	{{title_here}}<br>
-  random number is {{rmd}}
+
 </p>
 
 <div id="red"></div>

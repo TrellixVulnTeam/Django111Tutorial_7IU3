@@ -6,7 +6,10 @@ import random
 # Create your views here.
 def home(request):
     rmd = random.randint(0,1000000000)
-    return render(request , "base.html" , {
-                                            "title_here":"godspeed's color picker",
-                                            "rmd":rmd
-                                          })
+    context = {
+              "title_here":"godspeed's color picker",
+              "red":random.randint(0,255),
+              "green":random.randint(0,255),
+              "blue":random.randint(0,255),
+              }
+    return render(request , "base.html" , context)
